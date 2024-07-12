@@ -29,7 +29,6 @@ namespace FullStack.Services.Web.Controllers
 				TempData["error"] = response?.Message;
 			}
 
-
 			return View(list);
 		}
     }
