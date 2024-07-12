@@ -1,7 +1,25 @@
+using FullStack.Services.Web.Services;
+using FullStack.Services.Web.Services.IService;
+using FullStack.Services.Web.Utility;
+using Microsoft.AspNetCore.Builder;
+using Microsoft.AspNetCore.Cors.Infrastructure;
+using Microsoft.Extensions.DependencyInjection;
+using Microsoft.Extensions.Hosting;
+
 var builder = WebApplication.CreateBuilder(args);
 
 // Add services to the container.
 builder.Services.AddControllersWithViews();
+
+builder.Services.AddHttpContextAccessor();
+builder.Services.AddHttpClient();
+
+builder.Services.AddHttpClient<IStudentRegister, StudentRegister>();
+
+SD.StudentApiBase = builder.Configuration["ServiceUrls:StudentApiBase"];
+SD.AuthApiBase = builder.Configuration["ServiceUrls:AuthApiBase"];
+
+builder.Services.AddScoped<IStudentRegister, StudentRegister>();
 
 var app = builder.Build();
 
@@ -13,6 +31,7 @@ if (!app.Environment.IsDevelopment())
     app.UseHsts();
 }
 
+
 app.UseHttpsRedirection();
 app.UseStaticFiles();
 
@@ -22,6 +41,6 @@ app.UseAuthorization();
 
 app.MapControllerRoute(
     name: "default",
-    pattern: "{controller=Home}/{action=Index}/{id?}");
+    pattern: "{controller=Student}/{action=Index}/{id?}");
 
 app.Run();

@@ -5,11 +5,11 @@ VisualStudioVersion = 17.10.34902.84
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Front", "Front", "{ADEB3083-3465-4BF3-96EC-C78D7CECC355}"
 EndProject
-Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Service", "Service", "{92A46F1C-695A-4B90-B303-7BEF9255898E}"
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Backend", "Backend", "{92A46F1C-695A-4B90-B303-7BEF9255898E}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "FullStack.Services.Web", "FullStack.Services.Web\FullStack.Services.Web.csproj", "{225CCDD4-908F-4859-BCB8-AF72D7CBB7F3}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "FullStack.Services.Web", "FullStack.Services.Web\FullStack.Services.Web.csproj", "{225CCDD4-908F-4859-BCB8-AF72D7CBB7F3}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "FullStack.Services.API", "FullStack.Services.API\FullStack.Services.API.csproj", "{24AE50D3-3BC5-4BFB-A304-E4C0E50E118A}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "FullStack.Services.API", "FullStack.Services.API\FullStack.Services.API.csproj", "{24AE50D3-3BC5-4BFB-A304-E4C0E50E118A}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution

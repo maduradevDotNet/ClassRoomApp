@@ -1,4 +1,7 @@
+using AutoMapper;
+using FullStack.Services.API;
 using FullStack.Services.API.Data;
+using FullStack.Services.API.Service;
 using Microsoft.EntityFrameworkCore;
 using System;
 
@@ -15,6 +18,12 @@ builder.Services.AddDbContext<AppDbContext>(option =>
 {
     option.UseSqlServer(builder.Configuration.GetConnectionString("DefaultConnection"));
 });
+
+builder.Services.AddScoped<IStudentRegister, StudentRegister>(); 
+
+IMapper mapper = MappingConfig.RegisterMaps().CreateMapper();
+builder.Services.AddSingleton(mapper);
+builder.Services.AddAutoMapper(AppDomain.CurrentDomain.GetAssemblies());
 
 var app = builder.Build();
 
